@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Menu Hover Effects Mousemove</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Pikachu</a><img class="image" src="pikachu.png"></li>
+        <li><a href="#">Garchomp</a><img class="image" src="garc.png"></li>
+        <li><a href="#">Metagross</a><img class="image" src="metagross.png"></li>
+        <li><a href="#">Mewtwo</a><img class="image" src="mew2.png"></li>
+        <li><a href="#">Charizard</a><img class="image" src="char.png"></li>
+    </ul>
+    <script>
+        let image = document.querySelectorAll('.image');
+        function showImage(e){
+            for(var i = 0; i < image.length; i++){
+                x = e.pageX;
+                y = e.pageY;
+                image[i].style.transform = `translate(${x}px, ${y}px)`;
+            }
+        }
+        document.addEventListener('mousemove',showImage);
+    </script>
+</body>
+</html>
